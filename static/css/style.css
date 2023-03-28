@@ -1,0 +1,45 @@
+
+body{
+    background-image: url('car.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;   
+    max-width:none;
+    max-height: none;
+}
+
+h2{
+    text-align: center;
+    margin-top: 5rem;
+}
+.detailvalue{
+    max-width: 500px;
+    padding: 2.5rem;
+}
+
+form{
+    margin-top: 2rem;
+}
+ input,select{
+    width: 12rem;
+    border-radius: 1.5rem;
+    border-width: .15rem;
+    margin-top: .45rem;
+    margin-bottom: .045rem;
+    margin-left: 0.15rem;
+    margin-right: 0.15rem;
+    text-align: center;
+    border-color: black;
+ }
+ label{
+    margin-top: .45rem;
+    margin-bottom: .425rem;
+    margin-left: 0.15rem;
+    margin-right: 0.15rem;
+    font-size:large;
+    font-weight: bold;
+    color: black;
+ }
+ button{
+    margin-top: 1.5rem;
+ }
