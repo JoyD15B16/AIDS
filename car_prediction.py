@@ -73,17 +73,17 @@ model = joblib.load('car_price_predictor')
 def predict_price(**Input_values):
     
     data_new = pd.DataFrame({
-       'Category' : [Input_values['Category']],
-       'Leather interior': [Input_values['Leather_interior']],
-       'Fuel type' : [Input_values['Fuel_type']],
-       'Mileage' : [Input_values['Mileage']],
-       'Cylinders': [Input_values['Cylinders']],
-       'Gear box type' : [Input_values['Gear_box_type']],
-       'Wheel' : [Input_values['Wheel']],
-       'Airbags' : [Input_values['Airbags']],
+       'Category' : [int(Input_values['Category'])],
+       'Leather interior': [int(Input_values['Leather_interior'])],
+       'Fuel type' : [int(Input_values['Fuel_type'])],
+       'Mileage' : [int(Input_values['Mileage'])],
+       'Cylinders': [int(Input_values['Cylinders'])],
+       'Gear box type' : [int(Input_values['Gear_box_type'])],
+       'Wheel' : [int(Input_values['Wheel'])],
+       'Airbags' : [int(Input_values['Airbags'])],
        'Age' : [date_time.year - parse(Input_values['Production_year'], fuzzy=True).year] 
     })
+    
     result = model.predict(data_new)
-
-    return result[0]
+    return int(result)
 
