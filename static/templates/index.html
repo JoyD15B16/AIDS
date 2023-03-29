@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class=" d-flex justify-content-start">
+
+    <form action="{{url_for('result')}}">
+        <h2 class="">Used Car Price Predictor</h2>
+        <div class="row detailvalue">
+            <div class="col-lg-6">
+                <label for="model">Model</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" name="model" id="model" required>
+            </div>
+            <div class="col-lg-6">
+                <label for="manufacture">Manufacture</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" name="manufacture" id="manufacture" required>
+            </div>
+            <div class="col-lg-6">
+                <label for="production_year">Production Year</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="date" name="production_year" id="production_year" required>
+            </div>
+            <div class="col-lg-6">
+                <label for="category">Category</label>
+            </div>
+            <div class="col-lg-6">
+                <select name="category" id="category" required>
+                    
+                    <option value="0">Jeep</option>
+                    <option value="1">Hatchback</option>
+                    <option value="2">Sedan</option>
+                    <option value="3">Microbus</option>
+                    <option value="4">Goods wagon</option>
+                    <option value="5">Universal</option>
+                    <option value="6">Coupe</option>
+                    <option value="7">Minivan</option>
+                    <option value="8">Cabriolet</option>
+                    <option value="9">Limousine</option>
+                    <option value="10">Pickup</option>
+                    <!-- 
+                            'Jeep': 0,
+                            'Hatchback':1,
+                            'Sedan':2,
+                            'Microbus':3, 
+                            'Goods wagon':4,
+                            'Universal':5,
+                            'Coupe':6,
+                            'Minivan':7,
+                            'Cabriolet':8,
+                            'Limousine':9,
+                            'Pickup':10
+                         -->
+                </select>
+            </div>
+            <div class="col-lg-6">
+                <label for="leather_interior">Leather Inetrior</label>
+            </div>
+            <div class="col-lg-6">
+                <select name="leather_interior" id="leather_interior" required>
+                    
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                    <!-- 
+                            'No' : 0,
+                            'Yes' : 1
+                         -->
+                </select>
+            </div>
+            <div class="col-lg-6">
+                <label for="fuel_type">Fuel type</label>
+            </div>
+            <div class="col-lg-6">
+                <select name="fuel_type" id="fuel_type" required>
+                    
+                    <option value="0">Petrol</option>
+                    <option value="1">Diesel</option>
+                    <option value="2">CNG</option>
+                    <option value="3">Hybrid</option>
+                    <option value="4">LPG</option>
+                    <option value="5">Hydrogen</option>
+                    <option value="6">Plug-in Hybrid</option>
+                    <!-- 
+                            'Petrol':0,
+                            'Diesel':1,
+                            'CNG':2,
+                            'Hybrid':3, 
+                            'LPG':4,
+                            'Hydrogen':5,
+                            'Plug-in Hybrid':6
+                         -->
+                </select>
+            </div>
+            <div class="col-lg-6">
+                <label for="mileage">Mileage</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="number" name="mileage" id="mileage" required>
+            </div>
+            <div class="col-lg-6">
+                <label for="cylinders">Cylinders</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="number" name="cylinders" id="cylinders" required>
+            </div>
+            <div class="col-lg-6">
+                <label for="gear_box_type">Gear box type</label>
+            </div>
+            <div class="col-lg-6">
+                <select name="gear_box_type" id="gear_box_type" required>
+                    
+                    <option value="0">Automatic</option>
+                    <option value="1">Tiptronic</option>
+                    <option value="2">Variator</option>
+                    <option value="3">Manual</option>
+                    <!-- 
+                            'Automatic': 0,
+                            'Tiptronic':1,
+                            'Variator':2,
+                            'Manual':3
+                         -->
+                </select>
+            </div>
+            <div class="col-lg-6">
+                <label for="wheel">Wheel</label>
+            </div>
+            <div class="col-lg-6">
+                <select name="wheel" id="wheel" required>
+                    
+                    <option value="0">Left wheel</option>
+                    <option value="1">Right-hand drive</option>
+                    <!-- 
+                            'Left wheel':0,
+                            'Right-hand drive':1
+                         -->
+                </select>
+            </div>
+            <div class="col-lg-6">
+                <label for="airbags">Airbags</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="number" name="airbags" id="airbags" required>
+            </div>
+            <!-- <div class="col-lg-6">
+                <label for="predicted_price">Predicted Price</label>
+            </div>
+            <div class="col-lg-6">
+                <input type="number" name="predicted_price" id="predicted_price" readonly>
+            </div> -->
+
+            <div class="col-lg-6">
+                <button type="submit" class="btn btn-primary btn-lg" py-click="get_data()">Submit</button>
+            </div>
+            <div class="col-lg-6">
+                <button type="reset" class="btn btn-secondary btn-lg">Clear</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+
+{% endblock %}
